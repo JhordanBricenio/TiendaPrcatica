@@ -26,7 +26,6 @@ namespace TiendaPrcatica.Controllers
         [HttpPost]
         public IActionResult Login(string username, string password)
         {
-           // password = DesEncriptar(password);
 
             if (_authRepository.aunteticacionCokie(username, password))
             {
@@ -45,17 +44,6 @@ namespace TiendaPrcatica.Controllers
             ModelState.AddModelError("AuthError", "Usuario o contraseña incorrectos");
 
             return View();
-        }
-
-        private string DesEncriptar(string password)
-        {
-            SHA256 sha256 = SHA256.Create();
-            ASCIIEncoding encoding = new ASCIIEncoding();
-            byte[]? stream = null;
-            StringBuilder sb = new StringBuilder();
-            stream = sha256.ComputeHash(encoding.GetBytes(password));
-            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
-            return sb.ToString();
         }
         public IActionResult Logout()
         {
