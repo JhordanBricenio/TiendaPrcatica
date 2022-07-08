@@ -1,0 +1,33 @@
+﻿ <div class="container"> 
+
+        <div class="card">
+          <h4 id=usuario class="card-header"><strong>Formulario de registro</strong></h4>              
+          <div class="card-body">
+            <form action="/user/create" method="post">              
+              <div class="row">
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input  type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Escriba su nombre" >
+
+                  </div>
+                </div>   
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="Username" name="Username" placeholder="Escriba su nombre de usuario" required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="Password" name="Password" placeholder="Escriba su clave de acceso" required="required">
+                  </div>
+                </div>
+              </div>                  
+              <hr>
+              <button type="submit" title="Quiero registrarme." class="btn btn-dark">Registrarse</button>  
+            </form>
+          </div>
+        </div>
+      </div> <!-- /container -->
